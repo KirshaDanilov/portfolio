@@ -1,0 +1,351 @@
+body {
+  background-image: linear-gradient(107deg,#5AC4FE 36%, #F8D6B3 36% 66%, #FFA07A 66% 83%, #FFC0CB 83%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+address {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+h1 {
+  cursor: default;
+  font-size: clamp(0.666rem, -0.09rem + 1.575vi, 1.8rem);
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(0.984rem, -0.131rem + 2.325vi, 2.658rem);
+  text-decoration: underline;
+  cursor: default;
+}
+
+.mainblock {
+    background-color: #AAD7B8;
+    outline: 2px solid black;
+    display: flex;
+    gap: clamp(2.5rem, -0.333rem + 5.903vi, 6.75rem);
+    padding: clamp(0.813rem, -0.146rem + 1.997vi, 2.25rem);
+}
+
+.leftblock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.rightblock {
+  background-color: #FCF6E2;
+  outline: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.031rem, -0.115rem + 2.387vi, 2.75rem);
+  justify-content: flex-start;
+  padding: clamp(1.875rem, -0.208rem + 4.34vi, 5rem) clamp(1.438rem, -0.229rem + 3.472vi, 3.938rem) clamp(1.25rem, -0.25rem + 3.125vi, 3.5rem) clamp(1.438rem, -0.229rem + 3.472vi, 3.938rem);
+}
+
+.upside {
+  display: flex;
+  gap: clamp(1.031rem, -0.177rem + 2.517vi, 2.844rem);
+  justify-content: space-between;
+}
+
+.downside {
+  display: flex;
+  justify-content: space-between;
+}
+
+.education {
+  width: clamp(15.688rem, -3.229rem + 39.41vi, 44.063rem);
+  height: clamp(5.125rem, -0.667rem + 12.066vi, 13.813rem);
+}
+
+.circleeducation {
+  cursor: pointer;
+  fill: #FCF6E2;
+  transition: fill 0.3s ease;
+}
+
+.circleeducation:hover {
+  fill: black;
+}
+
+.mainbackground {
+  background-color: #F7C236;
+  outline: 2px solid black;
+  box-shadow: 4px 4px black;
+}
+
+.otherbackground {
+  background-color: #fff;
+  outline: 2px solid black;
+  box-shadow: 4px 4px black;
+}
+
+.mainbackgroundflex {
+  padding: clamp(0.688rem, -0.104rem + 1.649vi, 1.875rem) clamp(1.25rem, -0.25rem + 3.125vi, 3.5rem) clamp(0.688rem, -0.104rem + 1.649vi, 1.875rem) clamp(0.362rem, -0.021rem + 0.799vi, 0.938rem);
+  display: flex;
+  gap: clamp(0.313rem, -0.104rem + 0.868vw, 0.938rem);
+}
+
+.myphoto {
+  width: clamp(5.875rem, -0.792rem + 13.889vw, 15.875rem);
+  height: clamp(5.794rem, -0.76rem + 13.655vw, 15.625rem);
+}
+
+.headertext {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;  
+}
+
+.icon {
+  width: clamp(2.094rem, -0.302rem + 4.991vw, 5.688rem);
+  height: clamp(2.156rem, -0.302rem + 5.122vw, 5.844rem);
+}
+
+.uplist {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.paddinglist {
+  padding-top: clamp(0.125rem, -0.417rem + 1.128vi, 0.938rem);
+}
+
+.ruicon {
+  width: clamp(0.938rem, -0.104rem + 2.17vi, 2.5rem);
+  height: clamp(4.313rem, -0.604rem + 10.243vi, 11.688rem);
+}
+
+.enicon {
+  width: clamp(1.188rem, -0.104rem + 2.691vi, 3.125rem);
+  height: clamp(4.313rem, -0.604rem + 10.243vi, 11.688rem);
+}
+
+.listitem {
+  font-size: clamp(0.4rem, -0.053rem + 0.944vi, 1.08rem);
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0 4px;
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.listitem:hover {
+  color: white;
+  background-color: black;
+}
+
+.addressdown {
+  width: clamp(1.233rem, -0.164rem + 2.911vi, 3.329rem);
+  height: clamp(1.233rem, -0.164rem + 2.911vi, 3.329rem);
+  padding-right: clamp(0.313rem, -0.079rem + 0.816vi, 0.9rem);
+}
+
+.blackcolor {
+ fill: black;
+ transition: fill 0.3s ease;
+}
+
+.backgroundcolor {
+ fill: #AAD7B8;
+ transition: fill 0.3s ease;
+}
+
+.addressdown:hover .blackcolor {
+ fill: #AAD7B8;
+}
+
+.addressdown:hover .backgroundcolor {
+ fill: black;
+}
+
+.maintext {
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(0.4rem, -0.053rem + 0.944vi, 1.08rem);
+}
+
+.upheadtext {
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(0.331rem, -0.048rem + 0.79vi, 0.9rem);
+  font-weight: 300;
+  font-style: italic;
+  margin: 0;
+}
+
+.nametext {
+  display: flex;
+  flex-direction: column;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.upmenu {
+  padding: clamp(0.688rem, -0.104rem + 1.649vi, 1.875rem) clamp(1.063rem, -0.146rem + 2.517vi, 2.875rem) clamp(0.313rem, -0.063rem + 0.781vi, 0.875rem) clamp(0.5rem, -0.125rem + 1.302vi, 1.438rem);
+}
+
+.space-between {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.375rem, -0.083rem + 0.955vw, 1.063rem);
+}
+
+.skillicons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.063rem, -0.146rem + 2.517vi, 2.875rem);
+  row-gap: clamp(0.362rem, -0.054rem + 0.868vi, 0.988rem);
+}
+
+
+.languagespoint {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.25rem, -0.208rem + 3.038vi, 3.438rem);
+}
+
+.languagesh1 {
+  display: flex;
+  justify-content: center;
+}
+
+.spantext {
+  font-family: "Roboto", sans-serif;
+  cursor: default;
+  font-size: clamp(0.469rem, -0.052rem + 1.085vi, 1.25rem);
+  font-weight: 700;
+  padding: clamp(0.25rem, 0rem + 0.521vi, 0.625rem) clamp(0.25rem, -0.25rem + 1.042vi, 1rem);
+  border: 1px solid black;
+  border-radius: clamp(1rem, 0rem + 2.083vi, 2.5rem);
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.spantext:hover {
+  background-color: black;
+  color: white;
+}
+
+.ican {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, -0.5rem + 2.083vi, 2rem);
+  padding: clamp(0.313rem, -0.083rem + 0.825vi, 0.906rem) clamp(0.813rem, -0.063rem + 1.823vi, 2.125rem) 0 clamp(0.313rem, -0.083rem + 0.825vi, 0.906rem);
+}
+
+.circleeducationone {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  position: absolute;
+  display: none;
+  background: black;
+  color: white;
+  padding: 5px;
+}
+
+@media (max-width: 767px) {
+
+.mainblock {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 6px;
+    width: 355px;
+  }
+
+h1 {
+  font-size: 20px;
+  }
+
+h2 {
+  font-size: 18.45px;
+  }
+
+.rightblock {
+  gap: 27px;
+  padding: 12px 14px;
+}
+
+.upside {
+  display: grid;
+  grid-template-columns: 168px 121px;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  row-gap: 25px;
+}
+
+.mainbackground {
+  grid-column: 1 / -1;
+}
+
+.educationoff {
+  position: absolute;
+  display: none;
+}
+
+.myphoto {
+  width: 105px;
+  height: 103px;
+}
+
+.icon {
+  width: 51.5px;
+  height: 53px;
+}
+
+.paddinglist {
+  padding-top: 0;
+}
+
+.ruicon {
+  width: 23px;
+  height: 106px;
+}
+
+.enicon {
+  width: 28px;
+  height: 106px;
+}
+
+.flexone {
+  display: flex;
+  gap: 5px;
+}
+
+.listitem {
+  display: inline;
+  font-size: 12px;
+  padding: 1 2px;
+}
+
+.addressdown {
+  width: 19px;
+  height: 19px;
+  padding-right: 6px;
+}
+
+.ican {
+  gap: 10px;
+  height: fit-content;
+  padding: 10px;
+}
+
+.spantext {
+  font-size: 12px;
+  padding: 4px 9px;
+  border-radius: 15px;
+}
+
+}
