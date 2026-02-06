@@ -54,3 +54,26 @@ circlethree.addEventListener('mousemove', (e) => {
 circlethree.addEventListener('mouseleave', () => {
   tooltipthree.style.display = 'none';
 });
+
+const images = ['img1.jpg', 'img2.jpg', 'img3.jpg']; // список картинок
+let currentIndex = 0;
+
+function updateImage() {
+  document.getElementById('slide-image').src = images[currentIndex];
+}
+
+function previousImage() {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = images.length - 1; // возвращаемся к последней
+  }
+  updateImage();
+}
+
+function nextImage() {
+  currentIndex++;
+  if (currentIndex >= images.length) {
+    currentIndex = 0; // возвращаемся к первой
+  }
+  updateImage();
+}

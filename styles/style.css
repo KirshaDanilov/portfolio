@@ -264,7 +264,6 @@ h2 {
   background-color: #FCF6E2;
   outline: 2px solid black;
   display: flex;
-  justify-content: space-between;
   padding: clamp(1.938rem, 0.063rem + 3.906vi, 4.75rem) clamp(1.5rem, 0rem + 3.125vi, 3.75rem) clamp(1.25rem, -0.083rem + 2.778vi, 3.25rem) clamp(1.563rem, -0.021rem + 3.299vi, 3.938rem);
   gap: clamp(0.75rem, 0rem + 1.563vi, 1.875rem);
 }
@@ -277,12 +276,18 @@ h2 {
   }
 
   .imgexm {
+    box-shadow: 4px 4px black;
     width: clamp(12.531rem, 0.01rem + 26.085vi, 31.313rem);
     height: clamp(5.906rem, 0.01rem + 12.283vi, 14.75rem);
   }
 
   .spanexm {
     cursor: pointer;
+  }
+
+  .rightblockexmtwo {
+    display: grid;
+    
   }
 
 @media (max-width: 767px) {
@@ -377,5 +382,20 @@ h2 {
   padding: 4px 9px;
   border-radius: 15px;
 }
+
+.rightblockexm {
+  flex-direction: column;
+  padding: 12px 14px;
+  gap: clamp(0.75rem, 0rem + 1.563vi, 1.875rem);
+}
+
+.maintext {
+  font-size: 9px;
+}
+
+.imgexm {
+    width: 282px;
+    height: 131px;
+  }
 
 }
