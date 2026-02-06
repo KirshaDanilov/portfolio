@@ -14,6 +14,11 @@ address {
   align-items: center;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
 h1 {
   cursor: default;
   font-size: clamp(0.666rem, -0.09rem + 1.575vi, 1.8rem);
@@ -254,6 +259,31 @@ h2 {
   color: white;
   padding: 5px;
 }
+
+.rightblockexm {
+  background-color: #FCF6E2;
+  outline: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: clamp(1.938rem, 0.063rem + 3.906vi, 4.75rem) clamp(1.5rem, 0rem + 3.125vi, 3.75rem) clamp(1.25rem, -0.083rem + 2.778vi, 3.25rem) clamp(1.563rem, -0.021rem + 3.299vi, 3.938rem);
+  gap: clamp(0.75rem, 0rem + 1.563vi, 1.875rem);
+}
+
+  .paddingexm {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.438rem, 0.021rem + 0.868vi, 1.063rem);
+    padding: clamp(0.688rem, 0.063rem + 1.302vi, 1.625rem) clamp(1.375rem, 0rem + 2.865vi, 3.438rem) clamp(1.125rem, 0rem + 2.344vi, 2.813rem) clamp(0.688rem, 0.021rem + 1.389vi, 1.688rem);
+  }
+
+  .imgexm {
+    width: clamp(12.531rem, 0.01rem + 26.085vi, 31.313rem);
+    height: clamp(5.906rem, 0.01rem + 12.283vi, 14.75rem);
+  }
+
+  .spanexm {
+    cursor: pointer;
+  }
 
 @media (max-width: 767px) {
 
