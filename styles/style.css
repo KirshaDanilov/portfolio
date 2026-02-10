@@ -65,10 +65,10 @@ h2 {
 .downside {
   display: flex;
   justify-content: space-between;
-}
+  }
 
 .education {
-  width: clamp(15.688rem, -3.229rem + 39.41vi, 44.063rem);
+  width: clamp(15.688rem, -3.229rem + 39.41vi, 45.063rem);
   height: clamp(5.125rem, -0.667rem + 12.066vi, 13.813rem);
 }
 
@@ -228,6 +228,9 @@ h2 {
 }
 
 .spantext {
+  white-space: nowrap;
+  margin-right: clamp(0.5rem, -0.083rem + 1.215vi, 1.375rem);
+  margin-bottom: clamp(0.313rem, -0.146rem + 0.955vi, 1rem);
   font-family: "Roboto", sans-serif;
   cursor: default;
   font-size: clamp(0.469rem, -0.052rem + 1.085vi, 1.25rem);
@@ -245,6 +248,7 @@ h2 {
 }
 
 .ican {
+  width: clamp(11.563rem, -1.896rem + 28.038vi, 31.75rem);
   display: flex;
   flex-direction: column;
   gap: clamp(0.5rem, -0.5rem + 2.083vi, 2rem);
@@ -308,6 +312,16 @@ h2 {
 
 #photo {
   cursor: pointer;
+}
+
+#photo2 {
+  cursor: pointer;
+}
+
+.spandiv {
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 .textwidht {
@@ -419,6 +433,7 @@ h2 {
 }
 
 .ican {
+  width: auto;
   gap: 10px;
   height: fit-content;
   padding: 10px;
@@ -428,6 +443,8 @@ h2 {
   font-size: 12px;
   padding: 4px 9px;
   border-radius: 15px;
+  margin-right: 12px;
+  margin-bottom: 8px;
 }
 
 .rightblockexm {

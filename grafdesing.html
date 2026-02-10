@@ -17,7 +17,7 @@
                     <div class="flexone">
                     <li class="headertext paddinglist"><a class="listitem" href="./index.html">Общее</a></li>
                     <li class="headertext paddinglist"><a class="listitem" href="./web-desing.html">Веб-дизайн</a></li>
-                    <li class="headertext paddinglist"><a class="listitem" href="#">Дизайн презентаций</a></li>
+                    <li class="headertext paddinglist"><a class="listitem" href="./presintation.html">Дизайн презентаций</a></li>
                     </div>
                     <div class="flexone">
                     <li class="headertext paddinglist"><a class="listitem" href="./grafdesing.html">Графдизайн и Вёрстка</a></li>
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Обработка свайпов
 
 
-  if (imgElement) {
+  if (imgElement2) {
     imgElement2.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].clientX;
     });
@@ -176,6 +176,32 @@ document.addEventListener("DOMContentLoaded", () => {
       // свайп влево - показать следующее
       currentIndex = (currentIndex + 1) % images2.length;
       imgElement2.src = images2[currentIndex];
+    }
+  }
+
+  if (imgElement) {
+    imgElement.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    });
+
+    imgElement.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].clientX;
+      handleGesture();
+    });
+  }
+
+  function handleGesture() {
+    const deltaX = touchEndX - touchStartX;
+    const swipeThreshold = 50; // минимальное смещение для свайпа
+
+    if (deltaX > swipeThreshold) {
+      // свайп вправо - показать предыдущее
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      imgElement.src = images[currentIndex];
+    } else if (deltaX < -swipeThreshold) {
+      // свайп влево - показать следующее
+      currentIndex = (currentIndex + 1) % images.length;
+      imgElement.src = images[currentIndex];
     }
   }
 });
