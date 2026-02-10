@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио. Андрей Анисимов</title>
-    <script type="module" src="./script.js" defer></script>
+     
     <link rel="stylesheet" href="./styles/fonts.css"/>
     <link rel="stylesheet" href="./styles/style.css"/>
 </head>
@@ -17,7 +17,7 @@
                     <div class="flexone">
                     <li class="headertext paddinglist"><a class="listitem" href="./index.html">Общее</a></li>
                     <li class="headertext paddinglist"><a class="listitem" href="./web-desing.html">Веб-дизайн</a></li>
-                    <li class="headertext paddinglist"><a class="listitem" href="./presintation.html">Дизайн презентаций</a></li>
+                    <li class="headertext paddinglist"><a class="listitem" href="#">Дизайн презентаций</a></li>
                     </div>
                     <div class="flexone">
                     <li class="headertext paddinglist"><a class="listitem" href="./grafdesing.html">Графдизайн и Вёрстка</a></li>
@@ -50,28 +50,137 @@
                 </a>
             </address>
         </div>
-        <div class="rightblockexmtwo">
+        <div class="rightblockexm">
             <div class="mainbackground paddingexm">
-                <h2 class="headertext">Family quiz</h2>
-                <img class="imgexm" src="./img/familyquiz.png" alt="Пример работы">
-                <p class="maintext">
-                    Дизайн сайта для локальной интелектуально-развлекательной игры «Family Quiz».
-                    На нём пользователь может узнать расписание игр,
-                    записаться на любую понравившуюся, посмотреть фото-и ведофайлы с мероприятий.
-                </p>
-                <a href="https://www.figma.com/design/ggP9ixB0massaHBm4QyiOR/FAMILY-QUIZ?node-id=0-1&t=4W4lUFRUKzEnp67H-1"><span class="spantext spanexm">перейти на проект</span></a>
+                <h2 class="headertext">Графический дизайн</h2>
+                <div class="imgexmbiggraf">
+                <img id="photo" class="img12" src="./img/exmgraf/img1.png" alt="Картинка">
+                </div>
             </div>
+
             <div class="mainbackground paddingexm">
-                <h2 class="headertext">Blizzard Pass</h2>
-                <img class="imgexm" src="./img/blizzardpass.png" alt="Пример работы">
-                <p class="maintext">
-                    Сайт-игра, основанный на приключении «Blizzard Pass»для знаменитой Dungenos and Dragons.
-                    Прогресс текстового квеста зависит от выбора игрока. Большая часть кода этого сайта написана на языке JavaScript.
-                    Также имеется тёмная и светлая версия.
-                </p>
-                <a href="https://kirshadanilov.github.io/blizzardpass/"><span class="spantext spanexm">перейти на сайт</span></a>
-            </div>
-        </div>
+                <h2 class="headertext">Вёрстка</h2>
+                <div class="imgexmbigver">
+                <img id="photo2" class="img12" src="./img/ver1.jpg" alt="Картинка">
+                 </div>
+
+
     </div>
+                <script type="module">
+document.addEventListener("DOMContentLoaded", () => {
+  const images = [
+    './img/exmgraf/img1.png',
+    './img/exmgraf/img2.png',
+    './img/exmgraf/img3.png',
+    './img/exmgraf/img4.jpg'
+  ];
+
+    const images2 = [
+    './img/ver1.jpg',
+    './img/ver2.jpg',
+  ];
+  let currentIndex = 0;
+
+  const imgElement = document.getElementById("photo");
+
+  // Обработка щелчка по изображению
+  if (imgElement) {
+    imgElement.addEventListener('click', function(event) {
+      const rect = imgElement.getBoundingClientRect();
+      const clickX = event.clientX - rect.left; // позиция клика по изображению
+
+      if (clickX < rect.width / 2) {
+        // клик по левой половине — предыдущее изображение
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+      } else {
+        // клик по правой половине — следующее изображение
+        currentIndex = (currentIndex + 1) % images.length;
+      }
+      imgElement.src = images[currentIndex];
+    });
+  }
+
+  // Обработка свайпов
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (imgElement) {
+    imgElement.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    });
+
+    imgElement.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].clientX;
+      handleGesture();
+    });
+  }
+
+  function handleGesture() {
+    const deltaX = touchEndX - touchStartX;
+    const swipeThreshold = 50; // минимальное смещение для свайпа
+
+    if (deltaX > swipeThreshold) {
+      // свайп вправо - показать предыдущее
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      imgElement.src = images[currentIndex];
+    } else if (deltaX < -swipeThreshold) {
+      // свайп влево - показать следующее
+      currentIndex = (currentIndex + 1) % images.length;
+      imgElement.src = images[currentIndex];
+    }
+  }
+
+
+    const imgElement2 = document.getElementById("photo2");
+
+  // Обработка щелчка по изображению
+  if (imgElement2) {
+    imgElement2.addEventListener('click', function(event) {
+      const rect = imgElement2.getBoundingClientRect();
+      const clickX = event.clientX - rect.left; // позиция клика по изображению
+
+      if (clickX < rect.width / 2) {
+        // клик по левой половине — предыдущее изображение
+        currentIndex = (currentIndex - 1 + images2.length) % images2.length;
+      } else {
+        // клик по правой половине — следующее изображение
+        currentIndex = (currentIndex + 1) % images2.length;
+      }
+      imgElement2.src = images2[currentIndex];
+    });
+  }
+
+  // Обработка свайпов
+
+
+  if (imgElement) {
+    imgElement2.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    });
+
+    imgElement2.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].clientX;
+      handleGesture();
+    });
+  }
+
+  function handleGesture() {
+    const deltaX = touchEndX - touchStartX;
+    const swipeThreshold = 50; // минимальное смещение для свайпа
+
+    if (deltaX > swipeThreshold) {
+      // свайп вправо - показать предыдущее
+      currentIndex = (currentIndex - 1 + images2.length) % images2.length;
+      imgElement2.src = images2[currentIndex];
+    } else if (deltaX < -swipeThreshold) {
+      // свайп влево - показать следующее
+      currentIndex = (currentIndex + 1) % images2.length;
+      imgElement2.src = images2[currentIndex];
+    }
+  }
+});
+
+
+                </script>
 </body>
 </html>

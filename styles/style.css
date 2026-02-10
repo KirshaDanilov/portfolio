@@ -4,9 +4,8 @@ body {
   background-size: cover;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: flex-start;
 }
 address {
   display: flex;
@@ -84,6 +83,7 @@ h2 {
 }
 
 .mainbackground {
+  height: auto;
   background-color: #F7C236;
   outline: 2px solid black;
   box-shadow: 4px 4px black;
@@ -99,6 +99,7 @@ h2 {
   padding: clamp(0.688rem, -0.104rem + 1.649vi, 1.875rem) clamp(1.25rem, -0.25rem + 3.125vi, 3.5rem) clamp(0.688rem, -0.104rem + 1.649vi, 1.875rem) clamp(0.362rem, -0.021rem + 0.799vi, 0.938rem);
   display: flex;
   gap: clamp(0.313rem, -0.104rem + 0.868vw, 0.938rem);
+  align-items: center;
 }
 
 .myphoto {
@@ -277,6 +278,7 @@ h2 {
 
   .imgexm {
     box-shadow: 4px 4px black;
+    border: 1px solid black;
     width: clamp(12.531rem, 0.01rem + 26.085vi, 31.313rem);
     height: clamp(5.906rem, 0.01rem + 12.283vi, 14.75rem);
   }
@@ -286,11 +288,56 @@ h2 {
   }
 
   .rightblockexmtwo {
-    display: grid;
-    
+    display: flex;
+    gap: clamp(0.75rem, -0.375rem + 3.6vi, 1.875rem);
+    background-color: #FCF6E2;
+    outline: 2px solid black;
+    padding: clamp(1.938rem, -0.938rem + 9.2vi, 4.813rem) clamp(1.5rem, -0.75rem + 7.2vi, 3.75rem) clamp(1.25rem, -0.75rem + 6.4vi, 3.25rem);
   }
 
+  .imgexmbig {
+    width: clamp(19.625rem, 0.042rem + 40.799vi, 49rem);
+    height: clamp(9.25rem, 0.042rem + 19.184vi, 23.063rem);
+  }
+
+  .img12 {
+    width: 100%;
+    height: auto;
+  }
+
+
+#photo {
+  cursor: pointer;
+}
+
+.textwidht {
+  font-size: clamp(0.5rem, 0rem + 1.042vi, 1.25rem);
+  font-family: 'Roboto', sans-serif;
+  width: clamp(5.5rem, 0rem + 11.458vi, 13.75rem);
+  padding: clamp(0.813rem, 0.021rem + 1.649vi, 2rem) clamp(1rem, 0rem + 2.083vi, 2.5rem) clamp(1.5rem, 0.667rem + 1.736vi, 2.75rem) clamp(0.375rem, 0rem + 0.781vi, 0.938rem);
+}
+
+.mobileversion {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgexmbiggraf {
+  width: clamp(9.9rem, 0rem + 20.625vi, 24.75rem);
+  height: clamp(9.9rem, 0rem + 20.625vi, 24.75rem);
+}
+
+.imgexmbigver {
+  width: clamp(12.688rem, -0.188rem + 26.823vi, 32rem);
+  height: clamp(9.813rem, -0.146rem + 20.747vi, 24.75rem);
+}
+
+
 @media (max-width: 767px) {
+
+  body {
+    justify-content: center;
+  }
 
 .mainblock {
     display: flex;
@@ -397,5 +444,36 @@ h2 {
     width: 282px;
     height: 131px;
   }
+
+  .rightblockexmtwo {
+    display: grid;
+    gap: 20px;
+  }
+
+  .imgexmbig {
+    width: auto;
+    height: auto;
+  }
+
+  .textwidht {
+    font-size: 12px;
+    width: auto;
+    padding: 18px 14px 19px 9px;
+  }
+
+  .mobileversion {
+    flex-direction: row;
+    gap: 21px;
+  }
+
+  .imgexmbiggraf {
+  width: 246.5px;
+  height: 246.5px;
+}
+
+ .imgexmbigver {
+  width: 246.5px;
+  height: 190px;
+}
 
 }

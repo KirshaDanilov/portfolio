@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио. Андрей Анисимов</title>
-    <script type="module" src="./script.js" defer></script>
+     
     <link rel="stylesheet" href="./styles/fonts.css"/>
     <link rel="stylesheet" href="./styles/style.css"/>
 </head>
@@ -20,8 +20,7 @@
                     <li class="headertext paddinglist"><a class="listitem" href="#">Дизайн презентаций</a></li>
                     </div>
                     <div class="flexone">
-                    <li class="headertext paddinglist"><a class="listitem" href="#">Графический дизайн</a></li>
-                    <li class="headertext paddinglist"><a class="listitem" href="#">Вёрстка</a></li>
+                    <li class="headertext paddinglist"><a class="listitem" href="./grafdesing.html">Графдизайн и Вёрстка</a></li>
                     </div>
                     </ul>
                 </nav>
@@ -54,11 +53,84 @@
         <div class="rightblockexm">
             <div class="mainbackground paddingexm">
                 <h2 class="headertext">Примеры презентаций</h2>
-                <div id="image-container">
-                    <img id="slide-image" src="img1.jpg" alt="Картинка" width="300">
+                <div class="imgexmbig">
+                <img id="photo" class="img12" src="./img/exmpres/img1.jpg" alt="Картинка">
                 </div>
-                <button onclick="previousImage()">Назад</button>
-                <button onclick="nextImage()">Вперёд</button>
+                <script type="module">
+document.addEventListener("DOMContentLoaded", () => {
+  const images = [
+    './img/exmpres/img1.jpg',
+    './img/exmpres/img2.jpg',
+    './img/exmpres/img3.png',
+    './img/exmpres/img4.png'
+  ];
+  let currentIndex = 0;
+
+  const imgElement = document.getElementById("photo");
+
+  // Обработка щелчка по изображению
+  if (imgElement) {
+    imgElement.addEventListener('click', function(event) {
+      const rect = imgElement.getBoundingClientRect();
+      const clickX = event.clientX - rect.left; // позиция клика по изображению
+
+      if (clickX < rect.width / 2) {
+        // клик по левой половине — предыдущее изображение
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+      } else {
+        // клик по правой половине — следующее изображение
+        currentIndex = (currentIndex + 1) % images.length;
+      }
+      imgElement.src = images[currentIndex];
+    });
+  }
+
+  // Обработка свайпов
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (imgElement) {
+    imgElement.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    });
+
+    imgElement.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].clientX;
+      handleGesture();
+    });
+  }
+
+  function handleGesture() {
+    const deltaX = touchEndX - touchStartX;
+    const swipeThreshold = 50; // минимальное смещение для свайпа
+
+    if (deltaX > swipeThreshold) {
+      // свайп вправо - показать предыдущее
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      imgElement.src = images[currentIndex];
+    } else if (deltaX < -swipeThreshold) {
+      // свайп влево - показать следующее
+      currentIndex = (currentIndex + 1) % images.length;
+      imgElement.src = images[currentIndex];
+    }
+  }
+});
+                </script>
+            </div>
+            <div class="space-between mobileversion">
+                <div class="upmenu otherbackground space-between">
+                    <h2 class="headertext">Как делаю?</h2>
+                    <div class="skillicons">
+                    <img class="icon" src="./img/aiicon.png" alt="Икона иллюстратора">
+                    <img class="icon"src="./img/ppicon.png" alt="Иконка PowerPoint">
+                    <img class="icon"src="./img/figmaicon.png" alt="Иконка фигмы">
+                    <img class="icon" src="./img/googleicon.png" alt="Иконка Google">
+                    </div>
+                </div>
+                <div class="otherbackground">
+                    <p class="maintext textwidht">Я создаю презентации для работы, общественных лекций и квизов.
+                        Проекты редактируемые при помощи MS PowerPoint и Google Presentations.</p>
+                </div>
             </div>
         </div>
     </div>
